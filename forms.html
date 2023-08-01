@@ -5,37 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Forms Assignment</title>
-    <style>
-      body {
-        background-color: antiquewhite;
-        font-size: 18px;
-      }
-      h3 {
-        font-size: 24px;
-        text-decoration: underline;
-      }
-      .button {
-        width: 100px;
-        height: 30px;
-        cursor: pointer;
-        background-color: transparent;
-        color: rgb(40, 38, 38);
-        border-radius: 1px;
-        font-size: 18px;
-      }
-
-      .button:hover {
-        border-radius: 2px;
-        background-color: #dfef61;
-      }
-    </style>
   </head>
   <body>
     <form action="" method="POST">
       <h3>Customer Information</h3>
       <p>
         <label for="name">Name</label><br />
-        <input type="text" name="username" id="name" required size="50" />
+        <input
+          type="text"
+          name="username"
+          id="name"
+          required
+          size="50"
+          pattern="[A-Za-z ]+"
+        />
       </p>
 
       <p>
@@ -51,20 +34,22 @@
           rows="4"
           cols="43"
           required
+          pattern="[A-Za-z0-9 ]+"
         ></textarea>
       </p>
       <p>
         <label for="age">Age</label><br />
-        <input type="number" id="age" name="age" required />
+        <input type="number" id="age" name="age" required pattern="[0-9]+" />
       </p>
       <p>
         <label for="tel">Phone Number</label><br />
         <input
-          type="number"
+          type="text"
           id="phnumber"
           name="phonenumber"
-          placeholder="000-000-0000"
-          pattern="[0-9{3}]-[0-9{3}]-[0-9]{4}"
+          placeholder="Please enter a ten digit Phone number"
+          pattern="[0-9]{10}"
+          size="50"
           required
         />
       </p>
@@ -346,17 +331,26 @@
 
       <p>
         <label for="hobbies">Hobbies</label><br />
-        <select name="hobbies" id="hobbies">
-          <option value="reading">Reading</option>
-          <option value="sports">Sports</option>
-          <option value="music">Music</option>
-          <option value="travel">Travel</option>
-          <option value="hiking">Hiking</option>
-        </select>
+        <label for="reading">
+          <input type="checkbox" id="reading" name="reading" value="reading" />
+          Reading </label
+        ><br />
+        <label for="sports">
+          <input type="checkbox" id="sports" name="sports" value="sports" />
+          Sports </label
+        ><br />
+        <label for="music">
+          <input type="checkbox" id="music" name="music" value="music" />
+          Music </label
+        ><br />
+        <label for="travel">
+          <input type="checkbox" id="travel" name="travel" value="travel" />
+          Travel </label
+        ><br />
       </p>
       <p>
         <label for="comments">Additional Comment</label><br />
-        <textarea id="comments" name="comment" rows="10" cols="30"></textarea>
+        <textarea id="comments" name="comment" rows="10" cols="43"></textarea>
       </p>
 
       <input type="button" class="button" value="Submit" />
