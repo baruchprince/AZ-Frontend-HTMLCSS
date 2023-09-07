@@ -1,0 +1,12 @@
+.heading {
+  background-color: chartreuse;
+}
+ul li {
+  border: 1px solid;
+  padding: 10px;
+  color: red;
+  font-weight: bolder;
+}
+ul li:hover {
+  background-color: antiquewhite;
+}
